@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package OnlineReservationSystem;
 
 import java.io.File;
@@ -32,3 +33,13 @@ public class MainOnlineResevation extends VisualForm {
 
     }
 }
+=======
+package OnlineReservationSystem;
+
+public class MainOnlineResevation {
+    public static void main(String[] args) {
+        VisualForm form = new VisualForm();
+        form.createLoginPage();
+    }
+}
+>>>>>>> f7302f44612b05dd5a589c5d6bd82d6e74c2086d
