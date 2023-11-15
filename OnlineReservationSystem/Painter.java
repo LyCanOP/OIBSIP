@@ -15,7 +15,8 @@ class Painter extends JPanel implements ActionListener {
     private static final PropertyChangeSupport pcs = new PropertyChangeSupport(new Object());
     private static boolean userLoggedIn = false;
 
-    String finalName, finalSrcStation, finalDesStation, finalTime, finalPrnNo, finalPhoneNo, finalPrice;
+    String finalName, finalSrcStation, finalDesStation, finalTime, finalPrice;
+    Long finalPrnNo, finalPhoneNo;
 
 
     Painter(){
@@ -34,6 +35,7 @@ class Painter extends JPanel implements ActionListener {
         g.drawRect(200, 150, 650, 350);
         g.drawRect(200, 150, 275, 75);
         g.drawRect(550, 400, 275, 75);
+        g.drawString("Prn No"+finalPrnNo, 230, 170);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -41,7 +43,7 @@ class Painter extends JPanel implements ActionListener {
         setUserLoggedIn(true);
     }
 
-    public void getValues(String Name,String SrcStation,String DesStation,String Time,String PrnNo,String PhoneNo, String Price){
+    public void getValues(String Name,String SrcStation,String DesStation,String Time,Long PrnNo,Long PhoneNo, String Price){
         finalName = Name;
         finalSrcStation = SrcStation;
         finalDesStation = DesStation;

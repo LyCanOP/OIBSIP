@@ -56,10 +56,12 @@ public class VisualForm extends JFrame implements ActionListener {
     JScrollPane scrollPane;
     Objecct obj;
 
-    String currentUser, fromStation, toStation, time, price, prnNo, phoneNo;
+    String currentUser, fromStation, toStation, time, price;
+    Long prnNo, phoneNo;
     long prnNum;
 
-    String finalName, finalSrcStation, finalDesStation, finalTime, finalPrnNo, finalPhoneNo, finalPrice;
+    String finalName, finalSrcStation, finalDesStation, finalTime, finalPrice;
+    Long finalPrnNo, finalPhoneNo;
     Boolean isTicked = false;
 
     String columns[] = { "" };
@@ -313,8 +315,8 @@ public class VisualForm extends JFrame implements ActionListener {
                 finalDesStation = toStation;
                 finalTime = time;
                 prnNum = generateUniquePRN();
-                prnNo = String.valueOf(prnNum);
-                phoneNo = t2.getText().toString();
+                finalPrnNo = prnNum;
+                finalPhoneNo = Long.valueOf(t2.getText().toString());
                 finalPrice = price;
                 this.saveTicketToDataBase();
                 obj.setValues(finalName, finalSrcStation, finalDesStation, finalTime, finalPrnNo, finalPhoneNo, finalPrice);
@@ -342,8 +344,8 @@ public class VisualForm extends JFrame implements ActionListener {
             preparedStatement.setString(2, finalSrcStation);
             preparedStatement.setString(3, finalDesStation);
             preparedStatement.setString(4, finalTime);
-            preparedStatement.setString(5, finalPrnNo);
-            preparedStatement.setString(6, finalPhoneNo);
+            preparedStatement.setString(5, String.valueOf(finalPrnNo));
+            preparedStatement.setString(6, String.valueOf(finalPhoneNo));
             preparedStatement.setString(7, finalPrice);
 
             int rowsAffected = preparedStatement.executeUpdate();
@@ -907,6 +909,7 @@ public class VisualForm extends JFrame implements ActionListener {
                         .forEach(existingPRNs::add);
             }
         } catch (IOException e) {
+            System.out.println("Heres problem");
             e.printStackTrace();
         }
 
