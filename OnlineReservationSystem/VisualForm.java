@@ -869,13 +869,13 @@ public class VisualForm extends JFrame implements ActionListener {
 
     public void copyDataFrom(Objecct otherForm) {
         if (otherForm != null) {
-            this.currentUser = otherForm.finalName;
+            this.finalName = otherForm.finalName;
             this.finalSrcStation = otherForm.finalSrcStation;
             this.finalDesStation = otherForm.finalDesStation;
-            this.time = otherForm.finalTime;
-            this.prnNo = otherForm.finalPrnNo;
-            this.phoneNo = otherForm.finalPhoneNo;
-            this.price = otherForm.finalPrice;
+            this.finalTime = otherForm.finalTime;
+            this.finalPrnNo = otherForm.finalPrnNo;
+            this.finalPhoneNo = otherForm.finalPhoneNo;
+            this.finalPrice = otherForm.finalPrice;
             this.isTicked = otherForm.isTicked;
             System.out.println("Done");
         } else {
