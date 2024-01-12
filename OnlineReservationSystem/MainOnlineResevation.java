@@ -1,5 +1,5 @@
 package OnlineReservationSystem;
-//Prasad
+//Pr
 import java.io.File;
 
 public class MainOnlineResevation extends VisualForm {
