@@ -40,6 +40,7 @@ public class MainGuesserGame extends JFrame {
 
         l1.setBounds(300, 300, 500, 200);
         l1.setText("Hello");
+        
         this.add(l1);
     }
 
