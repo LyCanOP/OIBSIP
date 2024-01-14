@@ -79,6 +79,7 @@ public class MainGuesserGame extends JFrame {
         b1.setText("Hello");
         b2.setText("Hello");
         
+        
         add(l1);
         add(l2);
         add(b1);
