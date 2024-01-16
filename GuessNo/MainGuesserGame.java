@@ -1,5 +1,5 @@
 package GuessNo;
-//done
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -440,8 +440,7 @@ public class MainGuesserGame extends JFrame implements ActionListener {
         b2.setVisible(true);
 
         l2.setFont(new Font("", 1, 28));
-        l2.setText("HIGH SCORE [" + difficulty.getSelectedItem() + "/" + noOfGuesses.getSelectedItem() + "] : "
-                + highScores[currentLevel - 1]);
+        l2.setText("HIGH SCORE [" + difficulty.getSelectedItem() + "/" + noOfGuesses.getSelectedItem() + "] : " + highScores[currentLevel - 1]);
         l3.setForeground(Color.blue);
         l3.setText(hint);
         l4.setFont(new Font("", 1, 20));
