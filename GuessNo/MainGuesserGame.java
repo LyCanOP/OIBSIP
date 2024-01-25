@@ -326,7 +326,7 @@ public class MainGuesserGame extends JFrame implements ActionListener {
         l1.setBounds(270, 100, 800, 200);
         l1.setText("Guess the Number");
         l1.setForeground(Color.black);
-        l1.setFont(new Font("Comic Sans MS", 1, 80));
+        l1.setFont(new Font("Cocmic Sans MS", 1, 80));
 
         b1.setBounds(550, 300, 150, 60);
         b2.setBounds(550, 400, 150, 60);
