@@ -95,6 +95,8 @@ public class ATMInterface extends JFrame implements ActionListener {
     }
 
     private void setInvisible() {
+        t1.setText("");
+        t2.setText("");
         tArea.setVisible(true);
         l2.setVisible(false);
         l3.setVisible(false);
@@ -175,6 +177,9 @@ public class ATMInterface extends JFrame implements ActionListener {
                     if (wdraw.withdraw(no, date, time)) {
                         JOptionPane.showMessageDialog(null, "Withdraw Successfully", "Transaction Successful",
                                 JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "inefficient Balance", "Error",
+                            JOptionPane.ERROR_MESSAGE);
                     }
                     setInvisible();
                     homepage();
@@ -195,6 +200,9 @@ public class ATMInterface extends JFrame implements ActionListener {
                         if (transfer.transferTo(t1.getText().toString(), no, date, time)) {
                             JOptionPane.showMessageDialog(null, "Send Successfully", "Transaction Successful",
                                     JOptionPane.INFORMATION_MESSAGE);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "inefficient Balance", "Error",
+                                JOptionPane.ERROR_MESSAGE);
                         }
                         setInvisible();
                         homepage();

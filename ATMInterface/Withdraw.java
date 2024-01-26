@@ -12,8 +12,12 @@ public class Withdraw {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
             int balance = Integer.parseInt(reader.readLine()) - amount;
+            if (balance<0) {
+                reader.close();
+                return false;
+            }
             String toPerson = "NA";
-            String newLine = String.format("tran    "+date+"    "+time+"    %-6s"+"     -%-6s"+"      %-6s",toPerson,amount,balance);
+            String newLine = String.format("with    "+date+"    "+time+"    %-6s"+"     -%-6s"+"      %-6s",toPerson,amount,balance);
             String newData = balance +"\n\n"+"Type     Data       Time        To        Amount        Balance \n"+"----------------------------------------------------------------\n"+newLine;
             StringBuilder existingData = new StringBuilder();
             String line;
